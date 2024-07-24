@@ -1,11 +1,11 @@
-import { generateThumbNails } from "./thumbnail.js";
-import { showBigPicture } from "./big-picture.js";
+import { generateThumbNails } from './thumbnail.js';
+import { showBigPicture } from './big-picture.js';
 
 const container = document.querySelector('.pictures');
 
 const renderGallery = (pictures) => {
   container.addEventListener('click', (evt) => {
-    const thumbNail = evt.target.closeset('[data-thumbnail-id]');
+    const thumbNail = evt.target.closest('[data-thumbnail-id]');
     if (!thumbNail) {
       return;
     }
@@ -16,6 +16,7 @@ const renderGallery = (pictures) => {
     );
     showBigPicture(picture);
   });
+
   generateThumbNails(pictures, container);
 };
 

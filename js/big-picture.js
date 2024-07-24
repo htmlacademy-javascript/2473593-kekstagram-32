@@ -4,7 +4,7 @@ const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentLoaderElement = bigPictureElement.querySelector('.comments-loader');
 const bodyElement = document.querySelector('body');
 const cancelButtonElement = bigPictureElement.querySelector('.big-picture__cancel');
-const commentElement = document.querySelector('#comment').textContent.querySelector('.social.comment');
+const commentElement = document.querySelector('#comment').content.querySelector('.social__comment');
 
 const createComment = ({ avatar, name, message }) => {
   const comment = commentElement.cloneNode(true);
