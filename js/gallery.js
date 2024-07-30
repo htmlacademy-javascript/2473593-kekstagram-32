@@ -1,23 +1,23 @@
-import { generateThumbNails } from './thumbnail.js';
+import { renderThumbnails } from './thumbnail.js';
 import { showBigPicture } from './big-picture.js';
 
 const container = document.querySelector('.pictures');
 
 const renderGallery = (pictures) => {
   container.addEventListener('click', (evt) => {
-    const thumbNail = evt.target.closest('[data-thumbnail-id]');
-    if (!thumbNail) {
+    const thumbnail = evt.target.closest('[data-thumbnail-id]');
+    if (!thumbnail) {
       return;
     }
 
     evt.preventDefault();
     const picture = pictures.find(
-      (item) => item.id === +thumbNail.dataset.thumbNailId
+      (item) => item.id === +thumbnail.dataset.thumbnailId
     );
     showBigPicture(picture);
   });
 
-  generateThumbNails(pictures, container);
+  renderThumbnails(pictures, container);
 };
 
 export { renderGallery };
