@@ -142,7 +142,7 @@ const reset = () => {
 };
 
 const onEffectsChange = (evt) => {
-  setEffect(evt.taget.value);
+  setEffect(evt.target.value);
 };
 
 const init = () => {
